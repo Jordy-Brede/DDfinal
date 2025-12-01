@@ -1,0 +1,60 @@
+/* body */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Navbar */
+nav.orange {
+  background-color: #fb8c00 !important; /* Materialize orange darken-1 */
+}
+
+/* Buttons */
+.btn.orange {
+  background-color: #fb8c00 !important;
+}
+.btn.orange:hover {
+  background-color: #ef6c00 !important; /* darken on hover */
+}
+
+/* Card titles */
+.card-title.orange-text {
+  font-weight: 600;
+}
+
+/* Tabs */
+.tabs .tab a {
+  color: #fb8c00 !important;
+}
+.tabs .tab a.active {
+  color: #ef6c00 !important;
+  border-bottom: 2px solid #ef6c00;
+}
+.tabs .indicator {
+  background-color: #ef6c00 !important;
+}
+
+/* Offline banner */
+#offline-banner {
+  background-color: #e53935 !important;
+  font-weight: 500;
+}
+
+/* Form inputs */
+.input-field input:focus + label,
+.input-field textarea:focus + label {
+  color: #fb8c00 !important;
+}
+.input-field input:focus,
+.input-field textarea:focus {
+  border-bottom: 1px solid #fb8c00 !important;
+  box-shadow: 0 1px 0 0 #fb8c00 !important;
+}
+
+/* Google button */
+#google-btn {
+  background-color: #d32f2f !important; 
+}
+#google-btn:hover {
+  background-color: #b71c1c !important;
+}

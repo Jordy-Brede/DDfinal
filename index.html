@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Dash</title>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="public/styles.css">
+  <link rel="manifest" href="public/manifest.json">
+</head>
+<body class="grey lighten-4">
+
+  <!-- Navbar -->
+  <nav class="orange">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">Daily Dash</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li id="user-email"></li>
+        <li><a id="signout-btn" class="hide">Sign Out</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container" id="auth-section">
+    <!-- Sign In Card -->
+    <div id="signin-card" class="card">
+      <div class="card-content">
+        <span class="card-title orange-text text-darken-2">Sign In</span>
+        <form id="signin-form">
+          <div class="input-field">
+            <input id="signin-email" type="email" required>
+            <label for="signin-email">Email</label>
+          </div>
+          <div class="input-field">
+            <input id="signin-password" type="password" required>
+            <label for="signin-password">Password</label>
+          </div>
+          <button class="btn orange waves-effect waves-light" type="submit">Sign In</button>
+        </form>
+        <div class="section">
+          <button id="google-btn" class="btn red waves-effect waves-light">
+            <i class="material-icons left">account_circle</i> Google
+          </button>
+        </div>
+        <p class="grey-text">Don't have an account? <a href="#!" id="show-signup">Sign Up</a></p>
+      </div>
+    </div>
+
+    <!-- Sign Up Card -->
+    <div id="signup-card" class="card hide">
+      <div class="card-content">
+        <span class="card-title orange-text text-darken-2">Sign Up</span>
+        <form id="signup-form">
+          <div class="input-field">
+            <input id="signup-email" type="email" required>
+            <label for="signup-email">Email</label>
+          </div>
+          <div class="input-field">
+            <input id="signup-password" type="password" required>
+            <label for="signup-password">Password</label>
+          </div>
+          <button class="btn orange waves-effect waves-light" type="submit">Create Account</button>
+        </form>
+        <p class="grey-text">Already have an account? <a href="#!" id="show-signin">Sign In</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- App Section -->
+  <div id="app-section" class="container hide">
+    <div id="offline-banner" class="card-panel red white-text hide">
+      You are offline. Changes are saved locally and will sync when online.
+    </div>
+
+    <!-- Tabs -->
+    <ul class="tabs orange lighten-4">
+      <li class="tab col s4"><a class="active orange-text text-darken-2" href="#tasks">Tasks</a></li>
+      <li class="tab col s4"><a class="orange-text text-darken-2" href="#habits">Habits</a></li>
+      <li class="tab col s4"><a class="orange-text text-darken-2" href="#notes">Notes</a></li>
+    </ul>
+
+    <!-- Tasks -->
+    <div id="tasks" class="col s12">
+      <form id="task-form" class="card-panel">
+        <div class="input-field">
+          <input id="task-title" type="text" required>
+          <label for="task-title">Task Title</label>
+        </div>
+        <div class="input-field">
+          <input id="task-due" type="date">
+          <label for="task-due">Due Date</label>
+        </div>
+        <button class="btn orange waves-effect waves-light" type="submit">Add Task</button>
+      </form>
+      <ul id="task-list" class="collection"></ul>
+    </div>
+
+    <!-- Habits -->
+    <div id="habits" class="col s12">
+      <form id="habit-form" class="card-panel">
+        <div class="input-field">
+          <input id="habit-title" type="text" required>
+          <label for="habit-title">Habit Name</label>
+        </div>
+        <div class="input-field">
+          <select id="habit-frequency">
+            <option value="Daily">Daily</option>
+            <option value="Weekly">Weekly</option>
+          </select>
+          <label for="habit-frequency">Frequency</label>
+        </div>
+        <button class="btn orange waves-effect waves-light" type="submit">Add Habit</button>
+      </form>
+      <div id="habit-list" class="row"></div>
+    </div>
+
+    <!-- Notes -->
+    <div id="notes" class="col s12">
+      <form id="note-form" class="card-panel">
+        <div class="input-field">
+          <textarea id="note-text" class="materialize-textarea" required></textarea>
+          <label for="note-text">Note</label>
+        </div>
+        <button class="btn orange waves-effect waves-light" type="submit">Save Note</button>
+      </form>
+      <div id="notes-list" class="row"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script type="module" src="auth.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
